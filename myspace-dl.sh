@@ -46,7 +46,7 @@ read -n1 -p "I need a program called rtmpdump, do you wan to install it now? (y/
 echo [[ $REPLY = [yY] ]] && sudo apt-get -qq -y install rtmpdump || { echo "You didn't answer yes, or installation failed. Install it manualy. Exiting...";}  >&2; exit 1; }
 
 echo "[+] Requesting $1"
-page=`wget -L "http://myspace.com/$1" --quiet --user-agent="Mozilla" -O -`
+page=`wget -L "http://myspace.com/$1/music/songs" --quiet --user-agent="Mozilla" -O -`
 
 songs=`echo "$page" | grep '<button class="playBtn play_25 song" data-type="song"'`
 
